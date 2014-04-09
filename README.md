@@ -1,4 +1,4 @@
 openmrs-module-dhisintegration
 ==============================
 
-DHIS2 Integration
+Integration module for DHIS2 and OpenMRS
