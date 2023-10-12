@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
          
 	<changeSet id="dim-IntegrationServer" author="maurya">
 		<preConditions onFail="MARK_RAN">
@@ -279,7 +279,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_orgunit">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="orgunit_serverid" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_orgunit" foreignKeyName="orgunit_serverid" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="server_id" baseTableName="dim_orgunit" constraintName="orgunit_serverid" referencedColumnNames="id" referencedTableName="dim_integrationserver"/>
@@ -289,7 +289,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_dataelement">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="dataelement_serverid" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_dataelement" foreignKeyName="dataelement_serverid" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="server_id" baseTableName="dim_dataelement" constraintName="dataelement_serverid" referencedColumnNames="id" referencedTableName="dim_integrationserver"/>
@@ -300,7 +300,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_categorycombo">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="categorycombo_serverid" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_categorycombo" foreignKeyName="categorycombo_serverid" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="server_id" baseTableName="dim_categorycombo" constraintName="categorycombo_serverid" referencedColumnNames="id" referencedTableName="dim_integrationserver"/>
@@ -309,7 +309,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_categoryoption">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="categoryoption_serverid" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_categoryoption" foreignKeyName="categoryoption_serverid" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="server_id" baseTableName="dim_categoryoption" constraintName="categoryoption_serverid" referencedColumnNames="id" referencedTableName="dim_integrationserver"/>
@@ -318,7 +318,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_optionset">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="optionset_serverid" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_optionset" foreignKeyName="optionset_serverid" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="server_id" baseTableName="dim_optionset" constraintName="optionset_serverid" referencedColumnNames="id" referencedTableName="dim_integrationserver"/>
@@ -327,7 +327,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_option">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="option_serverid" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_option" foreignKeyName="option_serverid" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="server_id" baseTableName="dim_option" constraintName="option_serverid" referencedColumnNames="id" referencedTableName="dim_integrationserver"/>
@@ -336,7 +336,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_reporttemplate">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="reporttemplate_serverid" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_reporttemplate" foreignKeyName="reporttemplate_serverid" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="server_id" baseTableName="dim_reporttemplate" constraintName="reporttemplate_serverid" referencedColumnNames="id" referencedTableName="dim_integrationserver"/>
@@ -345,7 +345,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_datavaluetemplate">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="datavaluetemplate_serverid" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_datavaluetemplate" foreignKeyName="datavaluetemplate_serverid" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="server_id" baseTableName="dim_datavaluetemplate" constraintName="datavaluetemplate_serverid" referencedColumnNames="id" referencedTableName="dim_integrationserver"/>
