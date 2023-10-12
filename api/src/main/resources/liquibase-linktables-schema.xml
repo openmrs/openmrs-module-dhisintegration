@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
-         
-	
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
 	<changeSet id="dim-categorycombo categoryoption" author="maurya">
 		<preConditions onFail="MARK_RAN">
 			<not>
@@ -147,7 +146,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_catcombo_combooption">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="catcombo_combooption_categorycombo" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_catcombo_combooption" foreignKeyName="catcombo_combooption_categorycombo" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="catcombo_id" baseTableName="dim_catcombo_combooption" constraintName="catcombo_combooption_categorycombo" referencedColumnNames="id" referencedTableName="dim_categorycombo"/>
@@ -157,7 +156,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_catcombo_optionset">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="catcombo_optionset_categorycombo" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_catcombo_optionset" foreignKeyName="catcombo_optionset_categorycombo" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="catcombo_id" baseTableName="dim_catcombo_optionset" constraintName="catcombo_optionset_categorycombo" referencedColumnNames="id" referencedTableName="dim_categorycombo"/>
@@ -167,7 +166,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_categoryoption_option">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="categoryoption_option_categoryoption" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_categoryoption_option" foreignKeyName="categoryoption_option_categoryoption" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="categoryoption_id" baseTableName="dim_categoryoption_option" constraintName="categoryoption_option_categoryoption" referencedColumnNames="id" referencedTableName="dim_categoryoption"/>
@@ -177,7 +176,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_optionset_option">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="optionset_option_optionset" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_optionset_option" foreignKeyName="optionset_option_optionset" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="optionset_id" baseTableName="dim_optionset_option" constraintName="optionset_option_optionset" referencedColumnNames="id" referencedTableName="dim_optionset"/>
@@ -187,7 +186,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_orgunit_location">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="orgunit_location_orgunit" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_orgunit_location" foreignKeyName="orgunit_location_orgunit" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="orgunit_id" baseTableName="dim_orgunit_location" constraintName="orgunit_location_orgunit" referencedColumnNames="id" referencedTableName="dim_orgunit"/>
@@ -197,7 +196,7 @@
 	<changeSet author="maurya" id="foreign_key_constraints-dim_reporttemplate_dataelement">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<foreignKeyConstraintExists foreignKeyName="reporttemplate_dataelement_reporttemplate" />
+				<foreignKeyConstraintExists foreignKeyTableName="dim_reporttemplate_dataelement" foreignKeyName="reporttemplate_dataelement_reporttemplate" />
 			</not>
 		</preConditions>
 		<addForeignKeyConstraint baseColumnNames="reporttemplate_id" baseTableName="dim_reporttemplate_dataelement" constraintName="reporttemplate_dataelement_reporttemplate" referencedColumnNames="id" referencedTableName="dim_reporttemplate"/>
